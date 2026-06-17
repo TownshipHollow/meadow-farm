@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meadow Patch VR</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div id="hud" class="hud">
+      <div class="hud__brand">
+        <span class="hud__dot"></span>
+        <span>Meadow Patch VR</span>
+      </div>
+      <div class="hud__stats">
+        <span id="coins">$32</span>
+        <span id="day">Day 1</span>
+        <span id="weather">Clear</span>
+      </div>
+    </div>
+
+    <aside id="toolbar" class="toolbar">
+      <button class="tool is-active" data-tool="hoe" type="button">Hoe</button>
+      <button class="tool" data-tool="seed" type="button">Plant</button>
+      <button class="tool" data-tool="harvest" type="button">Harvest</button>
+      <button class="tool" data-tool="shop" type="button">Shop</button>
+      <select id="seedSelect" aria-label="Seed type">
+        <option value="carrot">Carrot</option>
+        <option value="wheat">Wheat</option>
+        <option value="tomato">Tomato</option>
+        <option value="potato">Potato</option>
+        <option value="pumpkin">Pumpkin</option>
+      </select>
+    </aside>
+
+    <section id="shopPanel" class="shop-panel" aria-label="Farm shop">
+      <div class="shop-panel__head">
+        <strong>Seed & Upgrade Shop</strong>
+        <button id="closeShop" type="button">Close</button>
+      </div>
+      <div id="shopItems" class="shop-items"></div>
+      <p class="hint">Point and trigger in VR, or click on desktop. Harvested crops sell automatically.</p>
+    </section>
+
+    <main id="overlay" class="overlay">
+      <section class="panel">
+        <p class="eyebrow">Peaceful WebXR farming</p>
+        <h1>Meadow Patch</h1>
+        <p class="lede">
+          Till soil with your hoe, plant carrots, wheat, tomatoes, potatoes, and pumpkins, then sell harvests to buy better farm upgrades.
+        </p>
+        <div class="actions">
+          <button id="playDesktop" class="primary" type="button">Play on screen</button>
+          <button id="enterVr" class="secondary" type="button">Enter VR</button>
+        </div>
+        <p id="xrMessage" class="message">WebXR needs HTTPS or localhost. GitHub Pages works well on Quest Browser.</p>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
